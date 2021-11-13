@@ -37,6 +37,7 @@ public class PauseScript : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isGamePaused = false;
+        Cursor.visible = false;
     }
 
     void pause()
@@ -44,11 +45,21 @@ public class PauseScript : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     public void goMainMenu()
     {
-        SceneManager.LoadScene("End");
+        SceneManager.LoadScene("start");
         Time.timeScale = 1f;
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+
+    
 
 }

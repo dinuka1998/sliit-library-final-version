@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 public class startMenuScript : MonoBehaviour
 {
 
-    public void StartApp()
+    public void StartFromEntrance()
     {
         SceneManager.LoadScene("sliitEnvironment");
+    }
+
+    public void StartFromLibrary()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void EndApp()
@@ -19,5 +24,10 @@ public class startMenuScript : MonoBehaviour
     public void replayApp()
     {
         SceneManager.LoadScene("sliitEnvironment");
+    }
+
+    public void quitApp()
+    {
+        Application.Quit();
     }
 }
